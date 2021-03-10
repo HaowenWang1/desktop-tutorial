@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	datacollection.html
+	Purpose:datacollection
+	Author:Haowen Wang
+	Id:c3335454
+	Date 20/10/2020
+-->
+<head>
+	<meta charset="UTF-8">
+	<title>data collection</title>
+	<link rel="stylesheet" type="text/css" href="a.css">
+	<script type="text/javascript">
+		
+		function check(){
+			var validname=/[a-zA-Z]+$/
+			if(document.collection.name.value=="")
+			{
+				alert("error,please enter your name!");
+				return false;
+			}
+			if(!validname.test(document.collection.name.value))
+			{
+				alert("please enter the correct name")
+				return false;
+			}
+			
+			var validemail=/[a-zA-Z0-9]{2,12}@[a-zA-Z0-9]{2,6}[.][c][o][m]$/
+			if(!validemail.test(document.collection.email.value))
+			{
+				alert("email is error")
+				return false;
+			}
+			if(document.collection.submitted.value<0)
+			{
+				alert("the number of How many holidays have you submitted before need more than 0")
+				return false;
+			}
+			if(!document.collection.sex[0].checked&&
+				!document.collection.sex[1].checked
+				)
+			{
+				alert("please enter your sex")
+				return false;
+			}
+			if(!document.collection.plan[0].checked&&
+				!document.collection.plan[1].checked&&
+				!document.collection.plan[2].checked
+				)
+			{
+				alert("please enter your plan for future")
+				return false;
+			}
+			if (document.collection.password.value="") 
+			{
+				alert("Please enter the password you want to create!")
+				return false;
+			}
+			var validpassword=/[a-zA-Z1-9]+$/
+			if (!validpassword.test(document.collection.password.value)) 
+			{
+				alert("The password format is incorrect (the correct format should contain both letters and numbers)")
+				return false;
+			}
+			return true;
+		}
+			
+	</script>
+</head>
+<body class="center">
+	<h1>Please tell us your information and ideas</h1>
+	<form name="collection" method="post" action="http://jkorpela.fi/cgi-bin/echo.cgi"  onsubmit="return check()">
+		<div>
+			<lable for="name">*name:</lable>
+			<input type="text" name="name" id="name">
+		</div><br>
+		<div>
+			<lable for="email">*email address:</lable>
+			<input type="text" name="email" id="email">
+		</div><br>
+		<div id="sex">
+		sex:
+				<label for="male">male</label>
+				<input type="radio" name="sex" value="male" id="male">
+				<label for="female">female</label>
+				<input type="radio" name="sex" value="female" id="female">
+		</div><br>
+		<div><lable for="submitted">How many holidays have you submitted before:</lable><br>
+		<input type="number" name="submitted"></div><br>
+		<div id="plan">
+		Do you have any plans to travel in the near future?<br>
+		<label for="plan of travel">yes</label>
+		<input type="radio" name="plan" value="yes" id="yes">
+		<label for="plan of travel">no</label>
+		<input type="radio" name="plan" value="no" id="no">
+		<label for="plan of travel">need to think</label>
+		<input type="radio" name="plan" value="need to think" id="need to think"><br><br><br>
+		Information about the suggested holiday:<br>
+		holiday name:<input type="text" name="holidayname"><br>
+		</div><br><br>
+		<div>
+		<label for="category">please choose the category of holiday</label>
+		<select name="category">
+			<option value="adventure holidays">adventure holidays</option>
+			<option value="beach holidays">beach holidays</option>
+			<option value="family holidays">family holidays</option>
+			<option value="budget holidays">budget holidays</option>
+		</select></div><br>
+		<div>description:<textarea rows="10" cols="10" name="description">please write some description here</textarea></div><br><br><br>
+		<div id="information">Do you know information about which of the following things?<br>
+		<label for="accommodation pricing">accommodation pricing</label>
+		<input type="checkbox" name="information" value="accommodation pricing">
+		<label for="coupon code">coupon code</label>
+		<input type="checkbox" name="information" value="coupon code"></div><br>
+		<div id="languages">
+			Which of the following languages do you speak<br>
+			<label for="English">English</label>
+			<input type="checkbox" name="languages" value="English">
+			<label for="Bahasa Indonesia">Bahasa Indonesia</label>
+			<input type="checkbox" name="languages" value="Bahasa Indonesia">
+			<label for="Chinese">Chinese</label>
+			<input type="checkbox" name="languages" value="Chinese">
+		</div><br>		
+		<div id="password">
+			<label for="password">*Please create your own website password</label><br>
+			<input type="password" name="password">
+		</div>
+		<div>
+		<input type="submit"  value="click here to submit">
+		<input type="reset" name="reset">
+		</div>
+	</form>
+</body>
+</html>
