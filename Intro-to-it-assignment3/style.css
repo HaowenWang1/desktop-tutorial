@@ -1,0 +1,26 @@
+body { margin-left:1cm;}
+h2.right {text-align: right}
+.center {text-align: center;}
+body {background-image: url(background.jpg);font-family: "arial",serif;}
+
+p.left {text-align: left;text-align:justify;}
+p {color: brown;}
+
+ul {list-style-position:inside; }
+.bigger {font-size: 150%;}
+address {float: right;}
+
+a:link {color: blue;}
+a:visited {color: green;}
+img.image {margin: 20px,20px,20px,20px}
+h1 {text-shadow: 3px 3px 3px green;font-style: italic; text-align: center;}
+h2 {text-shadow: 3px 3px 3px gold;font-size: 20px;text-align: center;}
+h3 {color: blue;}
+li.check{
+	float:left;
+	padding-left:100px;
+	position:relative;}
+.bot{margin-bottom:30px}
+.shadow{text-shadow: 2px 2px 2px green;}
+#right1 {float: right; margin-right:3cm;}
+width: 1800px;height: 900px;
